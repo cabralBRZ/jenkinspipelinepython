@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1') {
+        stage('Checkout') {
             steps {
-                echo 'Second example'
+                git branch: 'aula_11', url: 'https: //github.com/cabralBRZ/jenkinspipelinepython.git'
+            }
+        }
+        stage('Run'){
+            steps {
+                sh 'python3 app.py'
             }
         }
     }
